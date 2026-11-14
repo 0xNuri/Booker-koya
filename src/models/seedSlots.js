@@ -7,8 +7,8 @@ export async function seedInitialSlots(db) {
 
     console.log('Seeding initial clinic slots...');
 
-    const providers = ['Dr Ade', 'Dr Ngozi', 'Dr Ibrahim'];
-    const hours = [9, 11, 13, 15];
+   const providers = ['Dr Chidi', 'Dr Amina', 'Dr Kofi'];
+    const hours = [8, 10, 12, 14];
 
     const slotsToInsert = [];
     const today = new Date();

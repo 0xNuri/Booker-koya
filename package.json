@@ -8,7 +8,7 @@
     "dev": "nodemon index.js",
     "migrate:down": "node src/models/down.js"
   },
-  "author": "ifeoma",
+  "author": "0xnuri",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^18.0.10",

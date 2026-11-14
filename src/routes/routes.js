@@ -60,12 +60,12 @@ router.post('/bookings', async (req, res) => {
         }
 
         const idempCheck = await checkIdempKey(idempKey, req.body);
-        if (idempCheck.isSet) {
-            if(idempCheck.error) {
-                return res.status(idempCheck.status).json({error: idempCheck.error});
-            }
-            return res.status(idempCheck.status).json(idempCheck.data);
-        }
+      if (idempCheck.isSet) {
+        if (idempCheck.message) {
+        return res.status(idempCheck.status).json({ error: idempCheck.message });
+     }
+     return res.status(idempCheck.status).json(idempCheck.data);
+     }
 
         const createBooking = await addBooking(slot_id, name, email);
         if (!createBooking.success) {

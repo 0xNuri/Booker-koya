@@ -4,11 +4,13 @@ A booking API for a clinic that lets patients view available appointment slots, 
 
 ## Features
 
-- **Level 1** — Listing slots, booking slots, look up a booking
-- **Level 2** — API key authentication, input validation
-- **Level 3** — Concurrency-safe bookings, cancellation
-- **Level 4** — Idempotent requests, cursor-based pagination
-- **Level 5** — Per-email rate limiting (5 requests/minute)
+| Level | Capabilities |
+|-------|--------------|
+| 1 | Listing slots, booking slots, looking up a booking |
+| 2 | API key authentication, input validation |
+| 3 | Concurrency-safe bookings, cancellation |
+| 4 | Idempotent requests, cursor-based pagination |
+| 5 | Per-email rate limiting (5 requests/minute) |
 
 ## Tech Stack
 
@@ -21,7 +23,7 @@ A booking API for a clinic that lets patients view available appointment slots, 
 
 Full OpenAPI spec: [koyaacademy.com/assessment-api](https://koyaacademy.com/assessment-api)
 
-Every request requires the `X-API-Key` header.
+Every API request requires the `X-API-Key` header.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -34,48 +36,54 @@ Every request requires the `X-API-Key` header.
 
 ## Running Locally
 
-1. Clone the repo:
+1. **Clone the repo**
+
    ```bash
-   git clone https://github.com/ifaycodes/booker-koya.git
+   git clone https://github.com/0xnuri/booker-koya.git
    cd booker-koya
+   ```
 
-### Install dependencies:
-```bash
-npm install
-```
+2. **Install dependencies**
 
-### Create a .env file in the project root
-```bash
-DATABASE_URL=postgres://your_db_url
-API_KEY=your_secret_key
-PORT=3000
-```
+   ```bash
+   npm install
+   ```
 
-### Start the server:
-```bash
-npm start
-```
+3. **Create a `.env` file in the project root**
+
+   ```env
+   DATABASE_URL=postgres://your_db_url
+   API_KEY=your_secret_key
+   PORT=3000
+   ```
+
+4. **Start the server**
+
+   ```bash
+   npm start
+   ```
 
 The app runs on http://localhost:3000.
 
-## Project Folder
-```bash
-├── index.js                   # App entry point
+## Project Structure
+
+```text
+├── index.js                      # App entry point
 ├── public/
-│   └── index.html             # Web interface
+│   └── index.html                # Web interface
 └── src/
     ├── models/
-    │   ├── migrations.js       # DB schema setup
-    │   ├── seedSlots.js        # Initial slot seeder
-    │   ├── pool.js             # Postgres connection pool
-    │   ├── slotRepository.js   # Slot DB queries
+    │   ├── migrations.js         # DB schema setup
+    │   ├── seedSlots.js          # Initial slot seeder
+    │   ├── pool.js               # Postgres connection pool
+    │   ├── slotRepository.js     # Slot DB queries
     │   ├── bookingRepositiory.js # Booking DB queries
     │   └── idempotencyRepository.js # Idempotency DB queries
     ├── services/
-    │   ├── booker.js           # Business logic
-    │   └── idempSet.js         # Idempotency logic
+    │   ├── booker.js             # Business logic
+    │   └── idempSet.js           # Idempotency logic
     ├── routes/
-    │   └── routes.js           # Express route handlers
+    │   └── routes.js             # Express route handlers
     └── utils/
-        └── rateLimiter.js      # Sliding window rate limiter
+        └── rateLimiter.js        # Sliding window rate limiter
 ```

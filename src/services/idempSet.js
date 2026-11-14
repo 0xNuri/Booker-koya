@@ -15,7 +15,7 @@ export async function checkIdempKey(idempKey, body) {
         const existing = await idempRepo.getKey(idempKey);
         if (existing) {
             if (existing.body_hash !== bodyhash) {
-                return { isSet: true, status: 422, message: 'Idempotency Key reused  with a different body'};
+                return { isSet: true, status: 422, message: 'Idempotency Key reused with a different body'};
             }
             return { isSet: true, status: existing.status_code, data: existing.response_body}
         }

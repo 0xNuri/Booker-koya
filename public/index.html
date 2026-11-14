@@ -26,8 +26,8 @@
     p.sub { color: var(--muted); margin-top: 0.25rem; }
 
     /* API Key Bar */
-    .key-bar { background: var(--card); border: 1px solid var(--border); padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1.5rem; display: flex; gap: 0.5rem; align-items: center; }
-    .key-bar input { flex: 1; padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9rem; }
+    .key-bar { background: var(--card); border: 1px solid var(--border); padding: 0.75rem 1rem; border-radius: 16px; margin-bottom: 1.5rem; display: flex; gap: 0.5rem; align-items: center; }
+    .key-bar input { flex: 1; padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 10px; font-size: 0.9rem; }
 
     /* Tabs */
     .tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); }
@@ -35,12 +35,12 @@
     .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
 
     /* Alert */
-    .alert { padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem; display: none; }
+    .alert { padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem; display: none; }
     .alert.success { background: #dcfce7; color: var(--success); border: 1px solid #bbf7d0; display: block; }
     .alert.error { background: #fee2e2; color: var(--error); border: 1px solid #fecaca; display: block; }
 
     /* Confirmation Card */
-    .confirmation-card { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; display: none; }
+    .confirmation-card { background: #f0fdf4; border: 1px solid #86efac; border-radius: 14px; padding: 1.5rem; margin-bottom: 2rem; display: none; }
     .confirmation-card.show { display: block; }
     .confirmation-card h2 { color: var(--success); font-size: 1.25rem; margin-bottom: 0.75rem; }
     .confirm-field { display: flex; justify-content: space-between; padding: 0.4rem 0; font-size: 0.95rem; border-bottom: 1px dashed #bbf7d0; }
@@ -48,13 +48,14 @@
     /* Cards & Grids */
     .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
     .section-title { font-size: 1.25rem; font-weight: 600; }
-    .slots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .slots-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; }
+@media (max-width: 600px) { .slots-grid { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between; gap: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
     .card h3 { font-size: 1.15rem; color: var(--primary); }
     .card .meta { font-size: 0.6rem; color: var(--muted); }
 
     /* Buttons */
-    button { background: var(--primary); color: white; border: none; border-radius: 6px; padding: 0.6rem 1rem; cursor: pointer; font-weight: 500; font-size: 0.9rem; }
+    button { background: var(--primary); color: white; border: none; border-radius: 14px; padding: 0.6rem 1rem; cursor: pointer; font-weight: 500; font-size: 0.9rem; }
     button:hover { background: var(--primary-hover); }
     button:disabled { background: var(--muted); cursor: not-allowed; }
     .btn-secondary { background: var(--border); color: var(--text); }
@@ -64,17 +65,17 @@
 
     /* Search Bar */
     .search-bar { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .search-bar input { flex: 1; padding: 0.6rem 0.75rem; border: 1px solid var(--border); border-radius: 6px; }
+    .search-bar input { flex: 1; padding: 0.6rem 0.75rem; border: 1px solid var(--border); border-radius: 16px; }
 
     /* Badges */
-    .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
     .badge-confirmed { background: #dcfce7; color: var(--success); }
     .badge-cancelled { background: #fee2e2; color: var(--error); }
 
     /* Modal */
     .booking-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; padding: 1rem; }
     .booking-modal.open { display: flex; }
-    .modal-content { background: var(--card); border-radius: 8px; padding: 1.5rem; max-width: 420px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    .modal-content { background: var(--card); border-radius: 10px; padding: 1.5rem; max-width: 420px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
     .form-group { margin-bottom: 1rem; }
     .form-group label { display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.25rem; }
     .form-group input { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid var(--border); border-radius: 6px; }
